@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-function header() {
+function header git() {
   return <h1>Hello everyone</h1>
 }
 
