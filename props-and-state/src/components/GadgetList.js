@@ -4,6 +4,7 @@ function Gadget({ item }) {
   return (
     <div>
       <h3>{item.title} </h3>
+      <p>{item.price}</p>
       <img src={item.src} />
     </div>
   );
