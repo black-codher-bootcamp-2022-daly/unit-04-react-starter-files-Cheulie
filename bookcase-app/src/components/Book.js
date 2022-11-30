@@ -5,9 +5,16 @@ function Book({book}) {
   const { title } = book.volumeInfo;
   const { retailPrice } = book.saleInfo;
   return (
-    <div>
+    <div style = {{
+      backgroundColor: "green"
+      padding: "10px"
+       
+    }
+
+    }>
       <h3>{title}</h3>
       {retailPrice && retailPrice.amount < 3 ? "Great deal" : "Best Seller"}
+    
     </div>
   );
 }
