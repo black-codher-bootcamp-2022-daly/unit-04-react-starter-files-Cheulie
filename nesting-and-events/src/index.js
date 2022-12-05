@@ -24,26 +24,33 @@ const taskList = [
 ];
 
 
-function App() {
-  const [data] = useState(taskList)
 
+function App() {
+  const [data, setData] = useState(taskList)
+
+  function updateTaskList(id){
+    const newData = data.map((item) => {}) //here do something
+    SVGMetadataElement(newData)
+  }
+
+  const toggleComplete=(id)=> {
+    console.log(`Task with the id '${id}' was clicked inside Task`);
+  }
+  
   console.log("tobia's data", data)
 
   return (
     <Fragment>
-      <h1 key="heading">Task List</h1>
+      <h1 className="heading">Task List</h1>
       <TaskContainer>
         {data.map((item) => {
           const {title, isComplete, id} = item;
           console.log("tobia's item", item)
-          return <Task key={id} id={id} title={title} isComplete={isComplete}/>
+          return <Task key={id} id={id} title={title} isComplete={isComplete} handleClick={toggleComplete}/>
         })}
-        {/* <Task
-          id={taskList[0].id}
-          title={taskList[0].title}
-          isComplete={taskList[0].isComplete}
-        />
-        */}
+
+  
+        
 
         {/* Task: Nesting Components - Add you tasks here: */}
       </TaskContainer>
