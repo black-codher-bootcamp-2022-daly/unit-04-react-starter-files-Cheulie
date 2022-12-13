@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function Truck() {
-  return <h2>Hi, I am a Truck!</h2>;
+export default function Truck(props) {
+  return <h2>Hola, I am a Truck! I have {props.numberOfWheels} wheels</h2>;
 }
