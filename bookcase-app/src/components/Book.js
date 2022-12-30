@@ -1,25 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Book({book}) {
-  const { title } = book.volumeInfo;
-  const { retailPrice } = book.saleInfo;
+export function Book(props) {
   return (
-    <div style = {{
-      backgroundColor: "green"
-      padding: "10px"
-       
-    }
-
-    }>
-      <h3>{title}</h3>
-      {retailPrice && retailPrice.amount < 3 ? "Great deal" : "Best Seller"}
-    
+    <div
+      style={{
+        backgroundColor: "yellow",
+        padding: "10px",
+        marginBottom: "4px",
+      }}
+    >
+      <ul>
+      <h2>{props.title}</h2>
+      <p>{props.book.volumeInfo.description}</p>
+      <img src={props.book.volumeInfo.imageLinks.smallThumbnail}/>
+      </ul>
+      <button onClick={() => props.handleClick(props.id)}>Click to add book</button>
+      {props.retailPrice && props.retailPrice.amount < 3
+        ? "Great deal"
+        : "Best Seller"}
     </div>
   );
 }
 
 Book.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  retailPrice: PropTypes.shape({
+    amount: PropTypes.number,
+  }),
+  handleClick: PropTypes.func,
   book: PropTypes.shape({
     volumeInfo: PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -33,5 +43,3 @@ Book.propTypes = {
     }),
   }),
 };
-
-export default Book;
