@@ -15,6 +15,9 @@ function setTitle(title) {
       <div className="nav_link">
         <Link onClick={() => setTitle("SeArCh")} to="/search">Search</Link>
       </div>
+      <div className="nav_link">
+        <Link onClick={() => setTitle("bookcase")} to="/bookcase">Bookcase</Link>
+      </div>
     </div>
   );
 };

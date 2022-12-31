@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
+
 export function Book(props) {
+
+
   return (
     <div
       style={{
@@ -11,8 +15,9 @@ export function Book(props) {
       }}
     >
       <ul>
-      <h2>{props.title}</h2>
-      <p>{props.book.volumeInfo.description}</p>
+      <h2>{props.book.volumeInfo?.title}</h2>
+      <p>{props.book.volumeInfo?.description}</p>
+      <h2></h2>
       <img src={props.book.volumeInfo.imageLinks.smallThumbnail}/>
       </ul>
       <button onClick={() => props.handleClick(props.id)}>Click to add book</button>
@@ -43,3 +48,4 @@ Book.propTypes = {
     }),
   }),
 };
+

@@ -13,11 +13,11 @@ function App() {
   const [basket, setBasket] =useState([]);
 
 
-  const favoBook = books[4];
+  // const favoBook = books[4];
 
-  function addBook(id) {
-    console.log('click happened to id: ' + id)
-  }
+  // function addBook(id) {
+  //   console.log('click happened to id: ' + id)
+  // }
 
   async function findBooks(value) {
 		const url = `https://www.googleapis.com/books/v1/volumes?q=${value}&filter=paid-ebooks&print-type=books&projection=lite`;
@@ -32,13 +32,14 @@ function addBook(book) {
   const newBasket= basket;
   newBasket.push(book);
   setBasket(newBasket);
+  console.log(newBasket, basket)
 }
 
 return (
   <>
     <Routes>
       <Route
-        path="/Search"
+        path="/search/*"
         element={
           <Booklist>
             <Search
