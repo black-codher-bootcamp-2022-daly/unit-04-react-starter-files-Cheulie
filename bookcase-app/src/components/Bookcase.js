@@ -1,7 +1,10 @@
 import { Book } from './Book';
+import React, { useState } from "react";
 
 export const Bookcase = ({books}) => {
 
+
+  
   function addBook () {
   console.log("hello")
   };
@@ -14,6 +17,7 @@ export const Bookcase = ({books}) => {
                 key={book.id}
                 book={book}
                 handleClick={() => addBook(book)}
+
               />
 )) }
 

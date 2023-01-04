@@ -35,6 +35,16 @@ function addBook(book) {
   console.log(newBasket, basket)
 }
 
+function removeBook(book) {
+  const newBasket= basket;
+  var index = newBasket.indexOf(book);
+  if (index >= 0) {
+    newBasket.splice( index, 1 );
+  }
+  setBasket(newBasket);
+  console.log(newBasket, basket)
+}
+
 return (
   <>
     <Routes>
@@ -52,6 +62,9 @@ return (
                 key={book.id}
                 book={book}
                 handleClick={() => addBook(book)}
+                handleClickRemove={() => removeBook(book)}
+
+
               />
             ))}
           </Booklist>

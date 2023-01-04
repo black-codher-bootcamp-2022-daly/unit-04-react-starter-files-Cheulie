@@ -71,9 +71,9 @@ function handleSubmit (event) {
       }
 
         <h3>Results</h3>
-        Name: {name}
-        Age: {age}
-        Colour: {colour}
+        <div>Name: {name}</div>
+        <div>Age: {age}</div>
+      <div>Colour: {colour}</div>
         <br />
       </div>
     </div>

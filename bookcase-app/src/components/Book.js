@@ -21,6 +21,8 @@ export function Book(props) {
       <img src={props.book.volumeInfo.imageLinks.smallThumbnail}/>
       </ul>
       <button onClick={() => props.handleClick(props.id)}>Click to add book</button>
+      <button onClick={() => props.handleClickRemove(props.id)}>Click to remove book</button>
+
       {props.retailPrice && props.retailPrice.amount < 3
         ? "Great deal"
         : "Best Seller"}
